@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Projekt</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#5c0d2b] text-white">
+  <div class="container mx-auto p-10 flex justify-center">
+    <div class="w-full max-w-md bg-[#d46e77] p-6 border-5 border-[#d46e77] rounded hover transform transition-transform duration-300 shadow-md hover:shadow-lg">
+      <h1 class="text-3xl font-bold mb-6 text-center">User Projekt</h1>
+      <form id="userForm" class="space-y-4">
+        <input type="hidden" id="userId" />
+        <input type="text" id="firstName" placeholder="First Name" class="w-full p-2 text-black rounded" required />
+        <input type="text" id="lastName" placeholder="Last Name" class="w-full p-2 text-black rounded" required />
+        <input type="text" id="username" placeholder="Username" class="w-full p-2 text-black rounded" />
+        <input type="text" id="color" placeholder="Color (ex: #FF5733)" class="w-full p-2 text-black rounded" />
+        <button type="button" id="saveButton" class="bg-[#5c0d2b] px-4 py-2 text-white border-5 border-[#5c0d2b] rounded hover:bg-[#bf5a63] transform transition-transform duration-300 hover:scale-105 shadow-md hover:shadow-lg w-full">Spara</button>
+        <button type="button" id="addButton" class="bg-[#5c0d2b] px-4 py-2 text-white border-5 border-[#5c0d2b] rounded hover:bg-[#bf5a63] transform transition-transform duration-300 hover:scale-105 shadow-md hover:shadow-lg w-full">Lägg till</button>
+        <button type="button" id="deleteButton" class="bg-[#5c0d2b] px-4 py-2 text-white border-5 border-[#5c0d2b] rounded hover:bg-[#bf5a63] transform transition-transform duration-300 hover:scale-105 shadow-md hover:shadow-lg w-full">Ta bort</button>
+        <button type="button" id="updateButton" class="bg-[#5c0d2b] px-4 py-2 text-white border-5 border-[#5c0d2b] rounded hover:bg-[#bf5a63] transform transition-transform duration-300 hover:scale-105 shadow-md hover:shadow-lg w-full">Uppdatera</button>
+      </form>
+    </div>
+  </div>
+  <div class="container mx-auto mt-8 px-4">
+    <ul id="userList" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></ul>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
