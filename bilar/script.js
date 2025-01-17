@@ -90,38 +90,7 @@ updateButton.addEventListener("click", () => {
   });
 });
 
-// Spara bil
-saveButton.addEventListener("click", async () => {
-  const carData = getCarData(); // Hämta data från formuläret
 
-  // Kontrollera att alla fält är ifyllda
-  if (!carData.brand || !carData.color || !carData.year) {
-    alert("Vänligen fyll i alla fält innan du sparar.");
-    return;
-  }
-
-  // Skicka datan till servern via POST /cars
-  fetch("http://localhost:8000/cars", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(carData),
-  })
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Ett fel uppstod vid sparandet.");
-      }
-      return response.json();
-    })
-    .then(() => {
-      resetForm(); // Återställ formuläret
-      fetchCars(); // Hämta uppdaterad lista med bilar
-      alert("Bilen har sparats!"); // Visa ett enkelt meddelande
-    })
-    .catch((error) => {
-      console.error("Fel vid sparandet:", error);
-      alert("Ett fel uppstod: " + error.message);
-    });
-});
 
 
 // Hämta data från formuläret
